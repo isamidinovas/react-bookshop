@@ -5,17 +5,11 @@ export default function Book() {
     <section className="section">
       <div className="container">
         <div className="detals">
-          <div className="img">
-            <img
-              className="book_imgg"
-              src="https://cv2.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/34355120-sara-dzhio-nazad-k-tebe.jpg"
-              alt=""
-            />
-          </div>
+          <div className="img"></div>
           <div className="info_block">
-            <div className="info">
-              <p className="info_block_title">Назад к тебе</p>
-              <p className="info_block_title">Сара Джио</p>
+            <div className="info_block_title">
+              <p className="books_title"></p>
+              <p className="books_author">Сара Джио</p>
             </div>
             <span className="annotation">Аннотация</span>
             <p className="annotation_text">

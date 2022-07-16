@@ -1,16 +1,22 @@
 import React from "react";
-
+import { useCallback } from "react";
+import { useNavigate } from "react-router";
+import { useState } from "react";
 export default function Header() {
+  const [isCartVisible, setIsCartVisible] = useState(false);
+  const navigate = useNavigate();
+  const handleClick = useCallback(() => {
+    setIsCartVisible(false);
+    navigate("/cart");
+  }, [navigate]);
   return (
     // <header>
-    <div class="header">
-      <div class="container">
-        <div class="header_elements">
-          <div class="header_title">BookShop</div>
-          <div class="header_cart_icon">
-            <a class="fa-solid fa-cart-shopping" href="#">
-              {" "}
-            </a>
+    <div className="header">
+      <div className="container">
+        <div className="header_elements">
+          <div className="header_title">BookShop</div>
+          <div className="header_cart_icon" onClick={handleClick}>
+            <i className="fa-solid fa-cart-shopping" />
           </div>
         </div>
       </div>
