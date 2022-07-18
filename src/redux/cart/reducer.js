@@ -4,6 +4,7 @@ const cart = createSlice({
   name: "cart",
   initialState: {
     booksInCart: [],
+
   },
   reducers: {
     setBook: (state, action) => {
@@ -14,7 +15,8 @@ const cart = createSlice({
         (book) => book.id !== action.payload
       );
     },
+  
   },
 });
-export const { setBook, removeBook } = cart.actions;
+export const { setBook, removeBook} = cart.actions;
 export default cart.reducer;

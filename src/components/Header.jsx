@@ -3,10 +3,8 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 export default function Header() {
-  const [isCartVisible, setIsCartVisible] = useState(false);
   const navigate = useNavigate();
   const handleClick = useCallback(() => {
-    setIsCartVisible(false);
     navigate("/cart");
   }, [navigate]);
   return (

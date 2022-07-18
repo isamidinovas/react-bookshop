@@ -1,24 +1,23 @@
 import React from "react";
 import Button from "../Button";
+import { useSelector } from "react-redux";
 export default function Book() {
+  const books = useSelector((state) => state.books.currentBook);
+  if (!books) return null; //Чтоб ниче не исчезало после обновл стр
   return (
     <section className="section">
       <div className="container">
         <div className="detals">
-          <div className="img"></div>
+          <div className="img">
+            <img className="book_page_img" src={books.imageUrl} alt="" />
+          </div>
           <div className="info_block">
             <div className="info_block_title">
-              <p className="books_title"></p>
-              <p className="books_author">Сара Джио</p>
+              <p className="bookss_title">{books.title}</p>
+              <p className="bookss_author">{books.author}</p>
             </div>
             <span className="annotation">Аннотация</span>
-            <p className="annotation_text">
-              Когда-то общественность потрясла история Шарлотты, которая попала
-              в кораблекрушение во время медового месяца и вернулась домой лишь
-              спустя два года. Она провела много времени в открытом море, а
-              затем на необитаемом острове в компании нелюдимого мужчины по
-              имени Грэй, благодаря которому смогла выжить.
-            </p>
+            <p className="annotation_text">{books.annotation}</p>
             <Button />
           </div>
         </div>
