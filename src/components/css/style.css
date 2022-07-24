@@ -101,8 +101,8 @@ display:flex ;
 justify-content:space-evenly
 }
 .book_imgg{
-  width: 280px;
-  height: 360px;
+  width: 185px;
+  height: 235px;
 }
 .info_block{
   display: block;
@@ -177,4 +177,3 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 300px;
   height: 400px;
 }
-  
