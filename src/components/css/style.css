@@ -177,3 +177,23 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 300px;
   height: 400px;
 }
+.total_count_block{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.total_count_num{
+  font-size: 24px;
+}
+.add_button--red{
+  height: 50px;
+  background-color: rgb(232, 60, 60);
+  width: 170px;
+  border: 1px solid white;
+  border-radius: 5%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.add_button--red:hover{
+  background-color: rgb(165, 7, 7);
+}

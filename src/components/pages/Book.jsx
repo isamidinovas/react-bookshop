@@ -18,7 +18,7 @@ export default function Book() {
             </div>
             <span className="annotation">Аннотация</span>
             <p className="annotation_text">{books.annotation}</p>
-            <Button />
+            <Button books={books} />
           </div>
         </div>
       </div>

@@ -26,6 +26,14 @@ export default function Cart({ book }) {
             <CartItem book={book} key={book.id} />
           ))}
         </div>
+        <div className="total_count_block">
+          <div className="total_count">
+            <span className="total_count_num">{items.length} товара</span>
+          </div>
+          <div className="total_count_button">
+            <button className="add_button--red">ЗАКАЗАТЬ</button>
+          </div>
+        </div>
       </div>
     </div>
   );
