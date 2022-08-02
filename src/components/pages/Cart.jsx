@@ -11,7 +11,48 @@ export default function Cart({ book }) {
   // });
   const items = useSelector((state) => state.cart.booksInCart);
   if (items.length < 1) {
-    return <h2 className="empty_basket">Корзина пуста</h2>;
+    return (
+      <div className="empty_basket_block">
+        <h2 className="empty_basket">Корзина пуста</h2>
+        <NavLink to="/" className="navlink">
+          <div className="navigation_button_block">
+            <Navigation_Button />
+          </div>
+        </NavLink>
+      </div>
+    );
+  }
+  if (items.length == 1) {
+    return (
+      <div className="container">
+        <div className="basket_block">
+          <div className="basket_title">
+            <span className="basket">Корзина</span>
+            <i className="fa-solid fa-cart-shopping" href="">
+              {" "}
+            </i>
+          </div>
+          <div className="items">
+            {items.map((book) => (
+              <CartItem book={book} key={book.id} />
+            ))}
+          </div>
+          <div className="total_count_block">
+            <div className="total_count">
+              <span className="total_count_num">{items.length} товар</span>
+            </div>
+            <div className="total_count_button">
+              <button className="add_button--red">ЗАКАЗАТЬ</button>
+            </div>
+          </div>
+          <NavLink to="/" className="navlink">
+            <div className="navigation_button_block">
+              <Navigation_Button />
+            </div>
+          </NavLink>
+        </div>
+      </div>
+    );
   }
 
   return (

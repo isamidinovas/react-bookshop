@@ -220,3 +220,8 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
 .navlink{
   text-decoration: none;
 }
+.empty_basket_block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

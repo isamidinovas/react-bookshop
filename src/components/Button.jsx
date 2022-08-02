@@ -7,7 +7,6 @@ export default function Button({ book }) {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.booksInCart);
   const isBookInCart = items.some((item) => item.id === book.id);
-  console.log(book);
   const handleClick = (e) => {
     e.stopPropagation();
     if (isBookInCart) {
