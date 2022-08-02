@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function Book_item({ book }) {
   return (
     <div className="book">
-      <NavLink to={`/${book.id}`}>
+      <NavLink to={`/${book.id}`} >
         <div className="book_img">
           <img className="books_img" src={book.imageUrl} />
         </div>

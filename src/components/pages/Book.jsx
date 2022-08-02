@@ -1,8 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Button from "../Button";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BOOKS } from "../../BOOKS";
+import Navigation_Button from "../Navigation_Button";
 export default function Book() {
   // const books = useSelector((state) => state.books.currentBook);
   // if (!books) return null; //Чтоб ниче не исчезало после обновл стр
@@ -27,6 +29,11 @@ export default function Book() {
             <Button book={book} />
           </div>
         </div>
+        <NavLink to="/" className="navlink">
+          <div className="navigation_button_block">
+            <Navigation_Button />
+          </div>
+        </NavLink>
       </div>
     </section>
   );

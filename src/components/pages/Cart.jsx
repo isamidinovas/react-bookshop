@@ -1,7 +1,9 @@
 import React, { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
 import CartItem from "../CartItem";
+import Navigation_Button from "../Navigation_Button";
 export default function Cart({ book }) {
   const navigate = useNavigate();
   // const handleClick = useCallback(() => {
@@ -34,6 +36,11 @@ export default function Cart({ book }) {
             <button className="add_button--red">ЗАКАЗАТЬ</button>
           </div>
         </div>
+        <NavLink to="/" className="navlink">
+          <div className="navigation_button_block">
+            <Navigation_Button />
+          </div>
+        </NavLink>
       </div>
     </div>
   );
