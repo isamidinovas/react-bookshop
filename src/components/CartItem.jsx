@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeBook } from "../redux/cart/reducer";
-
+import { Link } from "react-router-dom";
 export default function CartItem({ book }) {
   const dispatch = useDispatch();
   const deleteClick = () => {

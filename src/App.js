@@ -7,6 +7,7 @@ import Cart from "./components/pages/Cart";
 import Book from "./components/pages/Book";
 import { store } from "./redux";
 import "./App.css";
+import Book_item from "./components/Book_item";
 function App() {
   return (
     <Provider store={store}>
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/book" element={<Book />} />
+            <Route path="/:id" element={<Book />} />
           </Routes>
         </div>
       </Router>
