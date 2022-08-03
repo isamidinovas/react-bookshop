@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
+import { calcTotalPrice } from "../../totalPrice";
 import CartItem from "../CartItem";
 import Navigation_Button from "../Navigation_Button";
 export default function Cart({ book }) {
@@ -10,6 +10,7 @@ export default function Cart({ book }) {
   //   navigate("/cart");
   // });
   const items = useSelector((state) => state.cart.booksInCart);
+  const totalPrice = calcTotalPrice(items);
   if (items.length < 1) {
     return (
       <div className="empty_basket_block">
@@ -22,39 +23,6 @@ export default function Cart({ book }) {
       </div>
     );
   }
-  if (items.length == 1) {
-    return (
-      <div className="container">
-        <div className="basket_block">
-          <div className="basket_title">
-            <span className="basket">Корзина</span>
-            <i className="fa-solid fa-cart-shopping" href="">
-              {" "}
-            </i>
-          </div>
-          <div className="items">
-            {items.map((book) => (
-              <CartItem book={book} key={book.id} />
-            ))}
-          </div>
-          <div className="total_count_block">
-            <div className="total_count">
-              <span className="total_count_num">{items.length} товар</span>
-            </div>
-            <div className="total_count_button">
-              <button className="add_button--red">ЗАКАЗАТЬ</button>
-            </div>
-          </div>
-          <NavLink to="/" className="navlink">
-            <div className="navigation_button_block">
-              <Navigation_Button />
-            </div>
-          </NavLink>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="container">
       <div className="basket_block">
@@ -69,9 +37,10 @@ export default function Cart({ book }) {
             <CartItem book={book} key={book.id} />
           ))}
         </div>
-        <div className="total_count_block">
-          <div className="total_count">
-            <span className="total_count_num">{items.length} товара</span>
+        <div className="order_block">
+          <div className="total_info">
+            <span className="total_count_num">Количество: {items.length} </span>
+            <span className="total_price">Цена: {totalPrice}Р</span>
           </div>
           <div className="total_count_button">
             <button className="add_button--red">ЗАКАЗАТЬ</button>
